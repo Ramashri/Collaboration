@@ -25,7 +25,7 @@ public class Job {
 	private String qualification;
 	private String status;
 	private String skills;
-	private String email;
+	/*private String email;*/
 	private String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 
 	@Column(name="postdate")
@@ -77,12 +77,12 @@ public class Job {
 		}
 		this.postdate = postdate;
 	}
-	public String getEmail() {
+	/*public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
+	}*/
 	public String getTimeStamp() {
 		return timeStamp;
 	}

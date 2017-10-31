@@ -22,8 +22,6 @@ public class CommentDAOTestCase {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit.collaboration");
 		context.refresh();
-
-		
 		commentDAO = (CommentDAO) context.getBean("CommentDAO");
 
 		comment = (Comment) context.getBean("comment");
@@ -33,7 +31,10 @@ public class CommentDAOTestCase {
 
 		comment.setUserName("mnhjknh");
 		comment.setComments("ghvgg");
-		
+		comment.setForumId(986);
+		comment.setUserId(74);
+		comment.setUserMail("cgbhj@gmail.com");
+
 		commentDAO.saveOrUpdate(comment);
 		
 
