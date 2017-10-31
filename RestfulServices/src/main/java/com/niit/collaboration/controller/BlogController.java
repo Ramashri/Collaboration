@@ -59,8 +59,9 @@ public class BlogController {
 		
 		User user = (User) session.getAttribute("user");   
 		System.out.println(blog.getTitle());
-		blog.setUserid(user.getUserid());
-		blog.setUsername(user.getUsername());
+		System.out.println(blog.getDescription());
+		//blog.setUserid(user.getUserid());
+		//blog.setUsername(user.getUsername());
 		blogDAO.saveOrUpdate(blog);
 		return new ResponseEntity(blog, HttpStatus.OK);
 	}

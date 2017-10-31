@@ -1,6 +1,5 @@
 package com.niit.collaboration.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -44,15 +43,15 @@ public class CommentController {
 		return new ResponseEntity(listcomment, HttpStatus.OK);
 	}
 
-	@GetMapping("/comments/{forumId}")
-	public ResponseEntity getForumId(@PathVariable("forumId") int forumId, HttpServletRequest request) {
+	@GetMapping("/comments/{forumid}")
+	public ResponseEntity getForumId(@PathVariable("forumid") int forumid, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		session.setAttribute("forumId", forumId);
+		session.setAttribute("forumId", forumid);
 		System.out.println("haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaai");
-		System.out.println(forumId);
-		List listcomment = commentDAO.getForumComments(forumId);
+		System.out.println(forumid);
+		List listcomment = commentDAO.getForumComments(forumid);
 		if (listcomment == null) {
-			return new ResponseEntity("No Comment found for ID " + forumId, HttpStatus.NOT_FOUND);
+			return new ResponseEntity("No Comment found for ID " + forumid, HttpStatus.NOT_FOUND);
 		}
 
 		return new ResponseEntity(listcomment, HttpStatus.OK);
@@ -81,9 +80,10 @@ public class CommentController {
 		comment.setUserName(user.getUsername());
 		comment.setUserId(user.getUserid());
 		
-		int forumId = (int) session.getAttribute("forumId");
-		System.out.println(forumId);
-		comment.setForumId(forumId);
+		Integer forumid = (Integer) session.getAttribute("forumid");
+		/*int forumid = (int) session.getAttribute("forumid");*/
+		System.out.println(forumid);
+		comment.setForumId(forumid);
 		commentDAO.saveOrUpdate(comment);
 
 		return new ResponseEntity(comment, HttpStatus.OK);
