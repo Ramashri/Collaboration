@@ -44,7 +44,7 @@
 <h3>Title:{{bna.title}} </h3>
 <h6>Authored By:{{bna.username}} </h6><h6>Created On:<span ng-bind="bna.timeStamp"></span></h6> 
 <h5>Status:{{bna.status}} </h5>
-<h5>Desc:{{bna.description}}</h5>
+<!-- <h5>Desc:{{bna.description}}</h5> -->
 <br>
 <a href="" ng-click="bcc.adminGet(bna)" class="btn btn-info">Read More</a>
 
@@ -64,7 +64,7 @@
     
 <h3><span ng-bind="for.forumname"></span></h3> <h6>Created On:<span ng-bind="for.timeStamp"></span></h6>
 <h5>Status: {{for.status}}</h5>
-<h5><span ng-bind="for.forumcontent" | limitTo : '5'></span></h5>
+<!-- <h5><span ng-bind="for.forumcontent" | limitTo : '5'></span></h5> -->
 <a href="" ng-click="fcc.adminGet(for)" class="btn btn-info">Read More</a>
 
 <hr>
